@@ -1098,6 +1098,12 @@ go_repository(
     importpath = "github.com/fullsailor/pkcs7",
     commit = "a009d8d7de53d9503c797cb8ec66fa3b21eed209",
 )
+
+go_repository(
+    name = "in_gopkg_mgo_v2",
+    commit = "3f83fa5005286a7fe593b055f0d7771a7dce4655",
+    importpath = "gopkg.in/mgo.v2",
+)
 ## istio/istio deps
 ##
 ## Docker rules

@@ -67,6 +67,9 @@ type infra struct { // nolint: aligncheck
 	Zipkin    bool
 	DebugPort int
 
+	// switch to test mongodb filter
+	Mongo bool
+
 	// check proxy logs
 	checkLogs bool
 
@@ -251,6 +254,12 @@ func (infra *infra) setup() error {
 	}
 	if infra.Zipkin {
 		if err := deploy("zipkin.yaml", infra.IstioNamespace); err != nil {
+			return err
+		}
+	}
+
+	if infra.Mongo {
+		if err := deploy("mongo.yaml", infra.IstioNamespace); err != nil {
 			return err
 		}
 	}
